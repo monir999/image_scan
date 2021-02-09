@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Image Scan') {
             steps {
-                sh 'grype alpine:3.8 -o CycloneDx > dependency-check-report.xml'
+                sh 'grype alpine:3.8 > dependency-check-report.xml'
             }
         }
     }
