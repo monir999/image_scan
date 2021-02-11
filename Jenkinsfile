@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Image Scan') {
             steps {
-                //sh 'My Name is Md'
+                sh 'echo monir'
                 sh 'grype alpine:3.9.2'
             }
         }
@@ -13,6 +13,7 @@ pipeline {
     post {
         always {
             dependencyCheckPublisher pattern: 'dependency-check-report.xml'
+            dependencyCheck additionalArguments: '', odcInstallation: 'OWSAP-Dependency-Check'
         }
     }
 }
